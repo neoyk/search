@@ -1,0 +1,23 @@
+BODY {MARGIN: 4px 0px }
+h1 {FONT-SIZE: 40px;FONT-FAMILY:Times New Roman }
+P {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px }
+P {BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 650px; BORDER-BOTTOM: 0px}
+P {FONT-SIZE: 12px}
+IMG {BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px}
+
+TABLE { BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 650px; BORDER-BOTTOM: 0px}
+TD {FONT-SIZE: 12px}
+#l TD {FONT-FAMILY: arial}
+#l TD {PADDING-LEFT: 107px}
+#l TD {FONT-SIZE: 14px}
+#sug TD {FONT: 14px verdana}
+#sug {  BORDER-RIGHT: #817f82 1px solid; BORDER-TOP: #817f82 1px solid; DISPLAY: none; LEFT: 0px; BORDER-LEFT: #817f82 1px solid; BORDER-BOTTOM: #817f82 1px solid; POSITION: absolute; TOP: 28px; moz-user-select: none}
+
+#km { width: 45%; FONT-SIZE: 18px}
+#lm { FONT: 16px arial}
+#pm {FONT:14px arial}
+A {FONT-FAMILY: arial}
+#l A {MARGIN-RIGHT: 1.14em}
+A {COLOR: #00c}
+A:active {COLOR: #f60}
+.b {font-family: arial; padding-top: 4px; height: 30px; color: #77c}

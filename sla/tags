@@ -1,0 +1,170 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+MySQLdb	idlist.py	/^import MySQLdb$/;"	i
+as	form.php	/^			$as=$row3[0];$/;"	v
+asn	form.php	/^			$asn=explode('as',$as);$/;"	v
+asn	sla_backup.php	/^/;"	v
+basedir	full.php	/^		$basedir = dirname(__FILE__);$/;"	v
+big_ceil	slafig.php	/^function big_ceil($in)$/;"	f
+big_floor	slafig.php	/^function big_floor($in)$/;"	f
+black	slafig.php	/^$black = imagecolorallocate($image,0x00,0x00,0x00);$/;"	v
+callpage	form.php	/^	$callpage = basename($_SERVER['SCRIPT_FILENAME']);$/;"	v
+cmd	slafig.php	/^$cmd = "select $entry,time from $table where id=$id ";$/;"	v
+common	slafig.php	/^function common($in)$/;"	f
+correct	full.php	/^	$correct=1;$/;"	v
+correct	full.php	/^	if($in=="--OR--" and $correct==0)$/;"	v
+correct	index.php	/^	$correct=1;$/;"	v
+correct	index.php	/^	if($in=="--OR--" and $correct==0)$/;"	v
+cou	slafig.php	/^$cou=$cou-1;$/;"	v
+cou	slafig.php	/^$cou=count($data);$/;"	v
+count	index.php	/^	$count = $row0[0];$/;"	v
+cur1	idlist.py	/^cur1=pm1.cursor()$/;"	v
+d	full.php	/^	$d=$t1%100;$/;"	v
+d	full.php	/^	$d=$t2%100;$/;"	v
+d	index.php	/^	$d=$t1%100;$/;"	v
+d	index.php	/^	$d=$t2%100;$/;"	v
+data	slafig.php	/^$data = array();$/;"	v
+date	slafig.php	/^$date = $row0[0];$/;"	v
+db	full.php	/^		$db = mysql_select_db("mnt");$/;"	v
+db	index.php	/^	$db = mysql_select_db("mnt");$/;"	v
+db	slafig.php	/^$db = mysql_select_db("mnt"); $/;"	v
+diff	slafig.php	/^	$diff= ($max-$min)\/6;$/;"	v
+diff	slafig.php	/^	if($diff>$min\/2) $diff=$min\/2;$/;"	v
+domain	full.php	/^			$domain = $row1[0];$/;"	v
+domain	index.php	/^	$domain = $row2[0];$/;"	v
+down	slafig.php	/^$down = 60;  \/\/下面留下的宽度$/;"	v
+entry	slafig.php	/^	$entry='bandwidth';$/;"	v
+entry	slafig.php	/^	$entry=strtolower($_GET['entry']);$/;"	v
+file	full.php	/^		$file = fopen($basedir.'\/id.list','r');$/;"	v
+httplib	idlist.py	/^import httplib$/;"	i
+id	full.php	/^			$id = intval($line[0]);$/;"	v
+id	index.php	/^	$id=$row1[0];$/;"	v
+id	slafig.php	/^	$id=$id0;$/;"	v
+id	slafig.php	/^	$id=1;$/;"	v
+id0	slafig.php	/^$id0=$_GET['id'];$/;"	v
+image	slafig.php	/^$image = imagecreate($img_width, $img_height);  \/\/创建画布$/;"	v
+img_height	slafig.php	/^$img_height = 300;  \/\/画布高度$/;"	v
+img_height	slafig.php	/^$img_height=$img_height * $in7;$/;"	v
+img_width	slafig.php	/^$img_width = 1000;  \/\/画布宽度$/;"	v
+img_width	slafig.php	/^$img_width=$img_width * $in6;$/;"	v
+in	full.php	/^	$in=$_GET['xaxis'];	if(strlen($in)==0)	$in="Month";$/;"	v
+in	index.php	/^	$in=$_GET['xaxis'];	if(strlen($in)==0)	$in="Month";$/;"	v
+in2	full.php	/^	$in2=$_GET['yaxis'];	if(strlen($in2)==0)	$in2="Auto";$/;"	v
+in2	index.php	/^	$in2=$_GET['yaxis'];	if(strlen($in2)==0)	$in2="Auto";$/;"	v
+in3	full.php	/^			$in3 = substr($row1[1],2);$/;"	v
+in3	index.php	/^	$in3=$_GET['yvalue'];	if(strlen($in3)==0)	$in3="4538";$/;"	v
+in3	slafig.php	/^$in3=$_GET['yvalue'];$/;"	v
+in4	full.php	/^	$in4=$_GET['min'];	$in4=intval($in4);	if(strlen($in4)==0)	$in4=0;$/;"	v
+in4	index.php	/^	$in4=$_GET['min'];	$in4=intval($in4);	if(strlen($in4)==0)	$in4=0;$/;"	v
+in4	slafig.php	/^$in4=$_GET['min'];$/;"	v
+in5	full.php	/^	$in5=$_GET['max'];	$in5=intval($in5);	if(strlen($in5)==0)	$in5=0;$/;"	v
+in5	index.php	/^	$in5=$_GET['max'];	$in5=intval($in5);	if(strlen($in5)==0)	$in5=0;$/;"	v
+in5	slafig.php	/^$in5=$_GET['max'];$/;"	v
+in6	full.php	/^	$in6=$_GET['xzoom'];	if(strlen($in6)==0 or $in6<0.5 or $in6>3)	$in6=1;$/;"	v
+in6	index.php	/^	$in6=$_GET['xzoom'];	if(strlen($in6)==0 or $in6<0.5 or $in6>3)	$in6=1;$/;"	v
+in6	slafig.php	/^$in6=$_GET['xzoom'];$/;"	v
+in7	full.php	/^	$in7=$_GET['yzoom'];	if(strlen($in7)==0 or $in7<0.5 or $in7>3)	$in7=1;$/;"	v
+in7	index.php	/^	$in7=$_GET['yzoom'];	if(strlen($in7)==0 or $in7<0.5 or $in7>3)	$in7=1;$/;"	v
+in7	slafig.php	/^$in7=$_GET['yzoom'];$/;"	v
+in8	full.php	/^	$in8=$_GET['color'];	if(strlen($in8)==0)	$in8="auto";$/;"	v
+in8	index.php	/^	$in8=$_GET['color'];	if(strlen($in8)==0)	$in8="auto";$/;"	v
+in8	slafig.php	/^$in8=$_GET['color'];$/;"	v
+inx	slafig.php	/^$inx=$_GET['xaxis'];$/;"	v
+iny	slafig.php	/^$iny=$_GET['yaxis'];$/;"	v
+jiange	slafig.php	/^$jiange = 0;  \/\/刻度之间的间隔$/;"	v
+jiange	slafig.php	/^$jiange=(int)($img_width-$left-$right)\/($cou-1);$/;"	v
+jiange2	slafig.php	/^$jiange2=($img_width-$left-$right)\/$xmark;$/;"	v
+left	slafig.php	/^$left = 70;  \/\/左侧留下的宽度$/;"	v
+left	slafig.php	/^{	$left=$left-10;$/;"	v
+limit	full.php	/^	$limit=$_GET['limit'];	$limit=intval($limit);	if($limit>3 or $limit<=0)	$limit=1;$/;"	v
+limit	index.php	/^	$limit=$_GET['limit'];	$limit=intval($limit);	if($limit>3 or $limit<=0)	$limit=1;$/;"	v
+line	full.php	/^			$line = explode(' ', fgets($file));$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0x00,0x00,0x00);$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0x00,0x00,0xFF);$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0x00,0xFF,0x00);$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0x80,0x00,0x80);$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0xFF,0x00,0x00);$/;"	v
+line_color	slafig.php	/^	$line_color = imagecolorallocate($image,0xFF,0xFF,0x80);$/;"	v
+linecache	idlist.py	/^import linecache$/;"	i
+link	full.php	/^		$link = mysql_connect("127.0.0.1", "root", "") or die('Connecting Failure!');$/;"	v
+link	index.php	/^	$link = mysql_connect("127.0.0.1", "root", "") or die('Connecting Failure!');$/;"	v
+link	slafig.php	/^$link = mysql_connect("127.0.0.1", "root", "") or die('Connecting Failure!'); $/;"	v
+m	full.php	/^	$m=$t%100;$/;"	v
+m	index.php	/^	$m=$t%100;$/;"	v
+max	slafig.php	/^		$max=$in5;$/;"	v
+max	slafig.php	/^	$max = $max+$diff;$/;"	v
+max	slafig.php	/^	if($min==$max) $max=$min+1000;$/;"	v
+max	slafig.php	/^$max = 1;  \/\/最大数据值$/;"	v
+max	slafig.php	/^$max = big_ceil(max($data));$/;"	v
+max	slafig.php	/^$max = max($data);$/;"	v
+min	slafig.php	/^		$min=$in4;$/;"	v
+min	slafig.php	/^	$min = $min-$diff;$/;"	v
+min	slafig.php	/^	$min = 0;$/;"	v
+min	slafig.php	/^$min = big_floor(min($data));$/;"	v
+min	slafig.php	/^$min = min($data);$/;"	v
+offset	index.php	/^	$offset=$limit-1;$/;"	v
+os	idlist.py	/^import os$/;"	i
+p_x	slafig.php	/^$p_x = array();$/;"	v
+p_y	slafig.php	/^$p_y = array();$/;"	v
+pagesize	full.php	/^			$pagesize = intval($line[1]);$/;"	v
+para	full.php	/^	$para=strtolower($_GET['entry']);$/;"	v
+para	full.php	/^	if(strlen($para)==0 or ($para!='latency' and $para != 'pagesize'))	$para="bandwidth"; $/;"	v
+para	index.php	/^	$para=strtolower($_GET['entry']); $/;"	v
+para	index.php	/^	if(strlen($para)==0 or ($para!='latency' and $para != 'pagesize'))  $para="bandwidth";$/;"	v
+pm1	idlist.py	/^pm1=MySQLdb.connect(host='localhost',user='root',db='mnt', charset = "utf8", use_unicode = True)$/;"	v
+pre1	slafig.php	/^$pre1 = array();$/;"	v
+ratio	slafig.php	/^	$ratio = 1;$/;"	v
+re	idlist.py	/^import re$/;"	i
+result	idlist.py	/^result = cur1.fetchall()$/;"	v
+result	slafig.php	/^$result = mysql_query($cmd, $link);$/;"	v
+result0	index.php	/^	$result0 = mysql_query("select count(*) from ipv4server where asn='as$in3'", $link);$/;"	v
+result0	slafig.php	/^$result0 = mysql_query("select count(*) from ipv4server where id=$id0", $link);$/;"	v
+result0	slafig.php	/^$result0 = mysql_query("select max(time) from $table where id=$id", $link);$/;"	v
+result1	full.php	/^			$result1 = mysql_query("select webdomain, asn from ipv4server where id=$id");$/;"	v
+result1	index.php	/^	$result1 = mysql_query("select id from ipv4server where asn='as$in3' limit $offset,1", $link);$/;"	v
+result2	index.php	/^	$result2 = mysql_query("select webdomain from ipv4server where id=$id", $link);$/;"	v
+result3	form.php	/^		$result3 = mysql_query("select distinct(asn) from ipv4server where asn!='as$in3' order by asn asc", $link);$/;"	v
+result3	index.php	/^	$result3 = mysql_query("select webdomain from ipv4server where id=$id", $link);$/;"	v
+right	slafig.php	/^$right = 40;  \/\/右侧留下的宽度$/;"	v
+row0	index.php	/^	$row0 = mysql_fetch_array($result0);$/;"	v
+row0	slafig.php	/^$row0 = mysql_fetch_array($result0);$/;"	v
+row1	full.php	/^			$row1 = mysql_fetch_array($result1);$/;"	v
+row1	index.php	/^	$row1 = mysql_fetch_array($result1);$/;"	v
+row2	index.php	/^	$row2 = mysql_fetch_array($result2);$/;"	v
+row3	index.php	/^	$row3 = mysql_fetch_array($result3);$/;"	v
+scale	slafig.php	/^	$scale = 1;$/;"	v
+scale	slafig.php	/^	$scale = pow(10,3);$/;"	v
+scale	slafig.php	/^	$scale = pow(10,6);$/;"	v
+showdate	full.php	/^	$showdate=intval(date("Ymd"));$/;"	v
+showdate	index.php	/^	$showdate=intval(date("Ymd"));$/;"	v
+string	idlist.py	/^import string$/;"	i
+sys	idlist.py	/^import sys$/;"	i
+t	full.php	/^	$t=$t1\/100;$/;"	v
+t	full.php	/^	$t=$t2\/100;$/;"	v
+t	index.php	/^	$t=$t1\/100;$/;"	v
+t	index.php	/^	$t=$t2\/100;$/;"	v
+t1	full.php	/^	$t1=$_GET['time1'];	$t1=intval($t1);	if($t1<20100714 or $t1>$showdate)	$t1=20100714;$/;"	v
+t1	index.php	/^	$t1=$_GET['time1'];	$t1=intval($t1);	if($t1<20100714 or $t1>$showdate)	$t1=20100714;$/;"	v
+t1	slafig.php	/^$t1=$_GET['time1'];$/;"	v
+t2	full.php	/^	$t2=$_GET['time2'];	$t2=intval($t2);	if($t2>$showdate or $t2<$t1)	$t2=$showdate;$/;"	v
+t2	index.php	/^	$t2=$_GET['time2'];	$t2=intval($t2);	if($t2>$showdate or $t2<$t1)	$t2=$showdate;$/;"	v
+t2	slafig.php	/^$t2=$_GET['time2'];$/;"	v
+table	slafig.php	/^	$table=$_GET['table'];$/;"	v
+table	slafig.php	/^	$table='web_perf';$/;"	v
+temp	form.php	/^		        $temp=$temp+1;$/;"	v
+temp	form.php	/^		    $temp=1;$/;"	v
+temp	sla_backup.php	/^/;"	v
+threading	idlist.py	/^import threading$/;"	i
+time	idlist.py	/^import time$/;"	i
+unit	slafig.php	/^	$unit = 'K';$/;"	v
+unit	slafig.php	/^	$unit = 'M';$/;"	v
+up	slafig.php	/^$up = 30;  \/\/上面留下的宽度$/;"	v
+white	slafig.php	/^$white = imagecolorallocate($image,0xFF,0xFF,0xFF);$/;"	v
+xmark	slafig.php	/^$xmark = (int)($in6 * 30) ;$/;"	v
+y	full.php	/^	$y=intval($t\/100);$/;"	v
+y	index.php	/^	$y=intval($t\/100);$/;"	v
+ymark	slafig.php	/^$ymark = (int)($in7 * 8) ;$/;"	v

@@ -1,0 +1,1 @@
+select max(latency),min(latency),min(time),max(time) from ipv4dnsperf where pagesize!=0 and id=1 and TO_DAYS('2014-06-18 00:10:06')-TO_DAYS(time)<=30 and TO_DAYS('2014-06-18 00:10:06')-TO_DAYS(time)>=0 

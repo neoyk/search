@@ -1,0 +1,212 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>IP to website Lookup Documentation</title>
+	<style type="text/css">
+		body {font-family:"arial";}
+		a { color:blue; text-decoration: underline}
+		a:hover { 
+			color:blue;
+			background-image: url(img/submenua_hover.jpg);
+			background-repeat: repeat-y;
+			text-decoration: underline
+		}
+		#b {font:12px arial; padding-top: 4px; height: 30px; color: #77c}
+	</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22500154-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body><a id="top"></a>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bgcolor="#FFFFFF" bordercolor="#111111" width="80%">
+	<tr><td background="img/bg0.gif" align="center" background-repeat: repeat-x; >
+	<h1>IP to website Lookup</h1>
+	</td></tr>
+	<tr><td bgcolor="#FFFFFF">&nbsp;</td></tr>
+	</table>
+	<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bgcolor="#FFFFFF" bordercolor="#111111" width="80%">
+	<tr>
+		<td width="12.5%" background="img/ngnbg.gif" valign="top" align="left">
+		<br>
+		<a  href="index.php">Homepage</a><br><br>
+		<a  href="#introduction">Introduction</a><br><br>
+		<a  href="#DNS">DNS</a><br><br>
+		<a  href="#HTTP">HTTP</a><br><br>
+		<a  href="#Download">Download</a><br><br>
+		<a  href="#References">References</a><br><br>
+		&nbsp;</td>
+		<td  width="67.5%" valign="top">
+	<h2><font color="#CB0C29">Important notice:</font></h2>
+	<p>After several years of development, pathperf has grown into an independent project from its mother project "Scalable Application-Specific Measurement Framework", and a poster is made in PAM 2013. The information in this documentation remains correct, but not exhaustive. Please check the reference for up-to-date information.</p>
+	<h2><font color="#CB0C29"><a id="introduction"></a>Introduction</font></h2>
+		<p>We propose a novel method to measure the status of a certain link between two end hosts. 
+		To guarantee the end-to-end link performance, it's necessary to measure the link segment by segment or hop by hop using distributed servers.</p> 
+		<p>Because of the huge size of the Internet, it's very difficult for us to realize the large-scale deployment of new measurement servers on the Internet. 
+		Certain kind of servers must be chosen to do the measurement work. 
+		We choose websites as measurement servers because websites are the most widely deployed servers on the Internet.</p> 
+		<p>To do the measurement work, any IP address of each hop from the link is mapped to a website in the same AS. 
+		End user simply downloads a page from the web site and from the downloading user can obtain the link status.</p>
+		<p>There are two service options dedicated to map any IP address to websites in the same AS, including:</p>
+		<ul>
+			<li><a href="#DNS">DNS</a>(UDP 53)</li>
+			<li><a href="#HTTP">HTTP</a>(TCP 80)</li>
+		</ul>
+		<p>Network topology information is directly obtained from routing infrastructure (IPv4 and IPv6 BGP neighbors), so the fidelity of the information is ensured.</p>
+		<p>Using DNS service one can obtain the following information:</p>
+		<ul>
+			<li>IP to website mapping: CNAME and A record</li>
+			<li>IP to AS number mapping: TXT record</li>
+			<li>AS number to website mapping: CNAME and A record (under construction)</li>
+		</ul>
+		<p>Using HTTP service one can obtain the following information:</p>
+		<ul>
+			<li>IP to website mapping: CNAME and A record</li>
+			<li>IP to AS number mapping: TXT record</li>
+			<li>AS number to website mapping (all the websites found in that AS)</li>
+			<li>Update Interface: you can add websites to the system</li>
+		</ul>
+	<h2><font color="#CB0C29"><a id="DNS"></a>DNS</font></h2>
+		<p>We leverage existing, widely deployed DNS caches for information delivery.
+		All lookup results are wrapped in standard DNS protocol to leverage the DNS infrastructure.
+		DNS has the advantage of being cacheable and based on UDP so it doesn't cause too much overhead. Up to now, there are four domains available:</p>
+		<ul>
+			<li>ip2server.sasm4.net</li>
+			<li>ip2asn.sasm4.net</li>
+			<li>ip6server.sasm4.net</li>
+			<li>ip6asn.sasm4.net</li>
+		</ul>
+		<p><b>ip2server.sasm4.net</b> is used to map an IPv4 address to a website in the same AS.</p>
+		<p><b>ip2asn.sasm4.net</b> is used to map an IPv4 address to the corresponding BGP Origin ASN.</p>
+		<p><b>ip6server.sasm4.net</b> and <b>ip6asn.sasm4.net</b> are the corresponding IPv6 version of the IPv4 domains.</p>
+		<p>All DNS-based queries should be made by pre-pending the reversed octets of the IP address to the appropriate domain listed above, demonstrated in the following examples:</p>
+		<table  border="0" cellpadding="0" width="80%" cellspacing="0" style="border-collapse: collapse" align="center">
+		<tr>
+			<td  background="img/bg2.gif">
+			<br />
+			<p><b>Example1:</b> query website using IP, return CNAME and A record.</p>
+			<p># nslookup 1.1.111.166.ip2server.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>1.1.111.166.ip2server.sasm4.net	canonical name = www.edu.cn.</p>
+			<p>Name:	www.edu.cn</p>
+			<p>Address: 202.112.0.36</p>
+			<br />
+			<p><b>Example2:</b> query AS number using IP, return TXT record.</p>
+			<p># nslookup -q=txt 1.1.111.166.ip2asn.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>1.1.111.166.ip2asn.sasm4.net	text = "as4538"</p>
+			<br />
+			</td>
+		</tr>
+		</table>
+		<p><b><font color="red">Attention:</font></b> Please reverse the full IP address, otherwise no result will be returned!</p>
+		<p>IPv6 queries are formed by reversing the four hexadecimal numbers of the address, and placing dots between each four numbers. 
+		For example, if IPv6 address is 2001:250:3::ca26:650d, the correct query is displayed as follows:</p>
+		<table  border="0" cellpadding="0" width="80%" cellspacing="0" style="border-collapse: collapse" align="center">
+		<tr>
+			<td  background="img/bg2.gif">
+			<br />
+			<p><b>IPv6 Example1:</b> query website using IPv6 address, return CNAME and AAAA record.</p>
+			<p># nslookup -q=aaaa 650d.ca26.0.0.0.2.250.2001.ip6server.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>650d.ca26.0.0.0.2.250.2001.ip6server.sasm4.net  canonical name = web6.csu.edu.cn.</p>
+			<p>web6.csu.edu.cn        has AAAA address 2001:250:4400::15</p>
+			<br />
+			<p><b>IPv6 Example2:</b> query AS number using IPv6 address, return TXT record.</p>
+			<p># nslookup -q=txt 650d.ca26.0.0.0.2.250.2001.ip6asn.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>650d.ca26.0.0.0.2.250.2001.ip6asn.sasm4.net     text = "as4538"</p>
+			<br />
+			</td>
+		</tr>
+		</table>
+		<p>You can considerably shorten your query if you assume that the long runs of zeroes are in the host portion of the address (as is often the case with IPv6 addresses:</p>
+		<table  border="0" cellpadding="0" width="80%" cellspacing="0" style="border-collapse: collapse" align="center">
+		<tr>
+			<td  background="img/bg2.gif">
+			<br />
+			<p><b>IPv6 Example3:</b> Shorten the query in IPv6 Example1</p>
+			<p># nslookup -q=aaaa 250.2001.ip6server.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>250.2001.ip6server.sasm4.net  canonical name = web6.csu.edu.cn.</p>
+			<p>web6.csu.edu.cn        has AAAA address 2001:250:4400::15</p>
+			<br />
+			<p><b>IPv6 Example4:</b> Shorten the query in IPv6 Example2</p>
+			<p># nslookup -q=txt 250.2001.ip6asn.sasm4.net</p>
+			<p>Server:		ip2.sasm4.net</p>
+			<p>Address:	115.25.86.11#53</p>
+			<p></p>
+			<p>250.2001.ip6asn.sasm4.net     text = "as4538"</p>
+			<br />
+			</td>
+		</tr>
+		</table>
+
+
+	<h2><font color="#CB0C29"><a id="HTTP"></a>HTTP</font></h2>
+		<p>The HTTP server acts as a web based interface to the ip-to-server lookup service. You can reach the service directly by browsing to:</p>
+		<p><a href="http://search.sasm3.net/" target="blank">http://search.sasm3.net/</a> (ipv4) or <a href="http://[2001:da8:243:8601:215:17ff:fe7c:7c9f]/" target="blank">http://[2001:da8:243:8601:215:17ff:fe7c:7c9f]/</a> (ipv6)</p>
+		<p>Simply click on the link above and follow the onscreen instructions to translate any IP to corresponding websites or AS number.</p>
+
+	<h2><font color="#CB0C29"><a id="Download"></a>Download</font></h2>
+	<p>Here are all the necessary files to build your own "Pathperf". BIND answers DNS query fro pathperf client. Zebra provides BGP RIB for BIND. Database containts all the information about websites. Pathperf client serves for estimation automation. (Due to complex network conditions, it may not always succeed.)</p>
+	<a href="bind_pathperf.tar.gz">bind_pathperf.tar.gz</a>&nbsp;
+	<a href="Zebra_pathperf.tar.gz">Zebra_pathperf.tar.gz</a>&nbsp;
+	<a href="pathperf_client.py">Pathperf client</a>&nbsp;
+	<a href="pathperf.20130302.sql">Pathperf database</a>&nbsp;
+	<h2><font color="#CB0C29"><a id="References"></a>References</font></h2>
+		<ol>
+	  		<li><a href="pam2013-final58.pdf" target="_blank">Kun Yu, C. Bao, X. Li, Pathperf: Path Bandwidth Estimation Utilizing Websites, PAM2013 Hongkong China</a></li>
+	  		<li>C. Bao, X. Li, Scalable Application-Specific Measurement Framework for High Performance Network Video, NOSSDAV'07 Urbana, Illinois USA</li>
+	  		<li>Hongqiang Liu, et al, WIND: A Scalable and Lightweight Network Topology Service for Peer-to-Peer Applications, NOMS'10 Osaka, Japan</li>
+	  		<li><a href="http://www.isc.org/software/bind/" target="_blank">BIND</a></li>
+	  		<li><a href="http://www.zebra.org/" target="_blank">Zebra</a></li>
+	  		<li><a href="http://www.fixedorbit.com/" target="_blank">Fixedorbit</a></li>
+	  		<li><a href="http://www.cidr-report.org/as2.0/" target="_blank">CIDR Report</a></li>
+	  		<li><a href="http://dmoz.org/" target="_blank">OPEN Directory Project</a></li>
+	  		<li><a href="http://www.team-cymru.org/Services/ip-to-asn.html" target="_blank">IP to ASN Mapping - Team Cymru</a></li>
+		</ol>
+			<p align="right"><a href="#top"><font size="-1">Back to Top</font></a><br /></p>
+
+		</td>
+	</tr>
+	<tr>
+		<td width="12.5%" align="center" style="border-top-width: 1; border-top-style:solid; padding-left:4; padding-right:4; padding-top:1; padding-bottom:1" bgcolor="#F0F0F0">
+
+      &nbsp;</td>
+		<td width="80%" bgcolor="#F0F0F0" style="border-top-style: solid; border-top-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+<p align="center" id=b>&copy;2009-<?php date_default_timezone_set('Asia/Chongqing'); echo date('Y');?> All rights reserved. Scalable Application-Specific Measurement Framework or Pathperf</p>
+</td>
+	</tr>
+	</table>
+	</center>
+</div>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,13 @@
+body {font-family:"arial";}
+.hl	{color:#084B8A}
+.shl	{color:#084B8A;font-size:125%;}
+.right18	{text-align:right;font-size: 18px}
+.graysi	{font-size:80%;font-family: arial;font-style:italic;color:gray;}
+.grays	{font-size:80%;font-family: arial;color:gray;}
+.redsi	{font-size:80%;font-family: arial;font-style:italic;color:red;}
+.red	{color:red;}
+#b {font:12px arial; color: #77c}
+.km {font-size: 18px;}
+.nr	{white-space:nowrap;}
+#lm {font: 16px arial;}
+#pm {text-align:left;  text-indent: 8.5em;}

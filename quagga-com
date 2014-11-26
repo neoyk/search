@@ -1,0 +1,35 @@
+#!/usr/bin/expect --
+
+# cisco-info
+
+exp_version -exit 5.0
+
+if $argc==3 {
+
+        set ip "[lindex $argv 0]"
+        set passwd "[lindex $argv 1]"
+        set comm "[lindex $argv 2]"
+
+        set prompt "dns_bgp>"
+
+        set timeout 120
+        spawn telnet $ip 2605
+
+        expect {
+                Password {
+                send "$passwd\r"
+                }
+        }
+
+        expect "$prompt*"
+        send "$comm\r"
+
+        expect "$prompt*"
+        send "\r"
+
+        expect "$prompt*"
+        send "exit\r"
+        send_user "\n"
+        exit
+}
+

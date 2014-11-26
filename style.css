@@ -1,0 +1,34 @@
+body {margin: 0px 8px }
+#sm {font: 22px "Times New Roman" }
+p
+{
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px; margin: 0px; 
+	border-bottom: 0px; border-top: 0px; border-left: 0px; border-right: 0px; 
+	font: 12px arial;
+}
+
+table.fancy { border-right: 0px; border-left: 0px; border-top: 0px; border-bottom:0px; width: 100%;
+		FONT: 16px arial; border-top:1px solid #2E9AFE;line-height:150%;background-color:#EFFBFB}
+table.cute { border-right: 1px; border-left: 1px; border-top: 1px; border-bottom:1px; 
+		FONT: 16px arial; solid #2E9AFE;line-height:150%;background-color:#EFFBFB}
+table.bbddd { border: 5px solid red;}
+td {font-size: 14px;}
+td.small {font-size: 10;font-family:arial;line-height:150%;}
+#tp td{border-bottom: 1px solid #CEF6E3;LINE-HEIGHT: 150%}   
+
+.b {font-family: arial; padding-top: 4px; height: 30px; color: #77c}
+.c {font:14px  arial; padding-top: 4px; height: 30px; color: #77c}
+#km { FONT-SIZE: 18px}
+#lm {font: 16px arial;}
+.input {font: 16px arial;}
+#low {font: 16px arial;}
+.title {font: 30px "Times New Roman"; color: #0000ff}
+.subtitle {font: 20px arial; padding-top: 6px; padding-bottom: 4px;background-color:#EFFBFB; color: #0000ff}
+.subnoback {font: 20px arial; padding-top: 0px; padding-bottom: 0px; color: #1E90FF}
+.info {FONT: 16px arial;padding-top: 2px; padding-bottom: 2px;}
+.warn {FONT: 16px arial;color: #FF0000}
+a {font-family: arial}
+.box{width:400px;border:1px solid #ccc;font-size:12px}
+.box dt{line-height:24px;text-align:right;margin:0;padding:0 10px;background:#CCC}
+.box dd{line-height:20px;margin:0}
+#holder2{height:200px}
